@@ -1,4 +1,4 @@
-$gray : #d3d3d3;
+$black: #444444;
 
 .hidden {
   display: none;
@@ -19,6 +19,16 @@ $gray : #d3d3d3;
 
   li:hover{
     cursor: pointer;
-    color: #444444;
+    color: $black;
+  }
+}
+
+h2, h4, p {
+  color: $black;
+  #specialties {
+    font-style: italic;
+  }
+  #bio {
+    margin-top: 20px;
   }
 }
