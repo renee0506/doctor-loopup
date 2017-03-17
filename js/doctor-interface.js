@@ -11,6 +11,7 @@ var displayProfile = function(profile, specialties){
       specialtiesStr = specialtiesStr + specialty.name + ", ";
     });
     $("#specialties").text(specialtiesStr.substring(0, specialtiesStr.length-2));
+    $(".hidden").removeClass("hidden");
 };
 
 var displayDoctors = function(results){
@@ -26,6 +27,7 @@ var displayDoctors = function(results){
 $(document).ready(function(){
  $("form").submit(function(event){
    event.preventDefault();
+   $("#profile").addClass("hidden");
    var medicalIssue = $("#medical-issues").val();
    doctor.GetDoctors(medicalIssue, displayDoctors);
  });
