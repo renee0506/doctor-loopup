@@ -8,18 +8,22 @@ $black: #444444;
   width: 300px;
 }
 
-#doctor-name {
-  padding-left: 50px;
-  padding-top: 20px;
-  font-size: 18px;
-  line-height: 1.8;
-  li {
-    color: gray;
-  }
+#name-div{
+  height: 83vh;
+  overflow: scroll;
+  #doctor-name {
+    padding-left: 50px;
+    padding-top: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    li {
+      color: gray;
+    }
 
-  li:hover{
-    cursor: pointer;
-    color: $black;
+    li:hover{
+      cursor: pointer;
+      color: $black;
+    }
   }
 }
 
@@ -30,5 +34,37 @@ h2, h4, p {
   }
   #bio {
     margin-top: 20px;
+  }
+}
+
+#bio-div {
+  height: 90%;
+  overflow:scroll;
+}
+
+footer {
+  bottom: 0;
+  height: 10vh;
+  text-align: center;
+  background: #F8F8F8;
+  width: 100vw;
+  padding-top:20px;
+  border-top:gray
+}
+
+form{
+  button {
+    margin-left: 10px;
+  }
+
+  label {
+    font-weight: normal;
+  }
+  .form-group {
+    padding-left: 10px;
+  }
+
+  .form-control {
+    margin-left: 10px;
   }
 }

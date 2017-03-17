@@ -15,6 +15,7 @@ var displayProfile = function(profile, specialties){
 };
 
 var displayDoctors = function(results){
+  $("#doctor-name").empty();
   results.forEach(function(doctor){
     $("#doctor-name").append("<li class='doctors' id='" + doctor.profile.first_name + " " + doctor.profile.last_name + "'>"+ doctor.profile.first_name + " " + doctor.profile.last_name + ", " + doctor.profile.title + "</li>");
   });
@@ -28,7 +29,8 @@ $(document).ready(function(){
  $("form").submit(function(event){
    event.preventDefault();
    $("#profile").addClass("hidden");
+   var distance = $("#distance option:selected").val();
    var medicalIssue = $("#medical-issues").val();
-   doctor.GetDoctors(medicalIssue, displayDoctors);
+   doctor.GetDoctors(medicalIssue, distance, displayDoctors);
  });
 });
