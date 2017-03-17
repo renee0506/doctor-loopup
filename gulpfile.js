@@ -50,7 +50,7 @@ gulp.task('concatInterface', function() {
     .pipe(gulp.dest('./tmp'));
 });
 
-gulp.task("minifyScrpts", ["jsBrowserify"], function(){
+gulp.task("minifyScripts", ["jsBrowserify"], function(){
   return gulp.src("./build/js/app.js")
   .pipe(uglify())
   .pipe(gulp.dest("./build/js"));
