@@ -16,10 +16,10 @@ var displayProfile = function(profile, specialties){
 
 var displayDoctors = function(results){
   results.forEach(function(doctor){
-    $("#doctor-name").append("<li class='doctors'>"+ doctor.profile.first_name + " " + doctor.profile.last_name + "</li>");
+    $("#doctor-name").append("<li class='doctors' id='" + doctor.profile.first_name + " " + doctor.profile.last_name + "'>"+ doctor.profile.first_name + " " + doctor.profile.last_name + ", " + doctor.profile.title + "</li>");
   });
   $(".doctors").click(function(){
-    doctor.GetProfile($(this).html(), displayProfile);
+    doctor.GetProfile($(this).attr("id"), displayProfile);
   });
 };
 

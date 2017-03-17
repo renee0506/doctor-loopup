@@ -1,3 +1,24 @@
+$gray : #d3d3d3;
+
 .hidden {
   display: none;
+}
+
+#medical-issues {
+  width: 300px;
+}
+
+#doctor-name {
+  padding-left: 50px;
+  padding-top: 20px;
+  font-size: 18px;
+  line-height: 1.8;
+  li {
+    color: gray;
+  }
+
+  li:hover{
+    cursor: pointer;
+    color: #444444;
+  }
 }
