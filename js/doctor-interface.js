@@ -15,6 +15,7 @@ var displayProfile = function(profile, specialties){
 };
 
 var displayDoctors = function(results){
+  $("#name-div").removeClass("hidden");
   $("#doctor-name").empty();
   results.forEach(function(doctor){
     $("#doctor-name").append("<li class='doctors' id='" + doctor.profile.first_name + " " + doctor.profile.last_name + "'>"+ doctor.profile.first_name + " " + doctor.profile.last_name + ", " + doctor.profile.title + "</li>");
@@ -24,12 +25,16 @@ var displayDoctors = function(results){
   });
 };
 
+var displayError = function(error){
+  $("#error").removeClass("hidden");
+  $("#error").html("<h1>We are sorry. Errors happened during our search. Please try again or try a different keyword</h1><br><p>"+ error +"<p>");
+};
+
 $(document).ready(function(){
  $("form").submit(function(event){
    event.preventDefault();
    $("#searched").removeClass("hidden");
    $("#hero-image").addClass("hidden");
-   $("#profile").addClass("hidden");
    var distance = $("#distance option:selected").val();
    var medicalIssue = $("#medical-issues").val();
    doctor.GetDoctors(medicalIssue, distance, displayDoctors);

@@ -10,7 +10,7 @@ Doctor.prototype.GetDoctors = function (medicalIssue, distance, displayDoctors) 
       displayDoctors(result.data);
     })
    .fail(function(error){
-      console.log("fail");
+      displayError(error);
     });
 };
 
@@ -21,7 +21,7 @@ Doctor.prototype.GetProfile = function (name, displayProfile) {
       displayProfile(result.data[0].profile, result.data[0].specialties);
     })
    .fail(function(error){
-      console.log("fail");
+      displayError(error);
     });
 };
 
