@@ -18,7 +18,7 @@ Doctor.prototype.GetProfile = function (name, displayProfile) {
   $.get('https://api.betterdoctor.com/2016-03-01/doctors?name='+ name +'&location=45.5231%2C-122.6765%2C%205&user_location=45.5231%2C-122.6765&skip=0&limit=20&user_key=' + apiKey)
    .then(function(result) {
      console.log(result);
-      displayProfile(result.data[0].profile), result.data[0].specialties;
+      displayProfile(result.data[0].profile, result.data[0].specialties);
     })
    .fail(function(error){
       console.log("fail");

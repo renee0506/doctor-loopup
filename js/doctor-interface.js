@@ -1,11 +1,16 @@
 var Doctor = require("./../js/doctor.js").doctorModule;
 var doctor = new Doctor();
 
-var displayProfile = function(profile){
+var displayProfile = function(profile, specialties){
+    var specialtiesStr = "";
     $("#name").text(profile.first_name + " " + profile.last_name);
     $("#title").text(profile.title);
     $("#image").html("<img src=\"" +  profile.image_url + "\" >");
     $("#bio").text(profile.bio);
+    specialties.forEach(function(specialty){
+      specialtiesStr = specialtiesStr + specialty.name + ", ";
+    });
+    $("#specialties").text(specialtiesStr.substring(0, specialtiesStr.length-2));
 };
 
 var displayDoctors = function(results){
