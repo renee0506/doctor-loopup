@@ -1,14 +1,22 @@
 var Doctor = require("./../js/doctor.js").doctorModule;
 var doctor = new Doctor();
 
+var displayProfile = function(profile){
+    $("#name").text(profile.first_name + " " + profile.last_name);
+    $("#title").text(profile.title);
+    $("#image").html("<img src=\"" +  profile.image_url + "\" >");
+    $("#bio").text(profile.bio);
+};
+
 var displayDoctors = function(results){
   results.forEach(function(doctor){
     $("#doctor-name").append("<li class='doctors'>"+ doctor.profile.first_name + " " + doctor.profile.last_name + "</li>");
   });
   $(".doctors").click(function(){
-    doctor.GetProfile($(this).html());
+    doctor.GetProfile($(this).html(), displayProfile);
   });
 };
+
 
 $(document).ready(function(){
  $("form").submit(function(event){
