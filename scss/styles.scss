@@ -8,6 +8,13 @@ $black: #444444;
   width: 300px;
 }
 
+#hero-image{
+  height:83vh;
+  img {
+    width:100%
+  }
+}
+
 #name-div{
   height: 83vh;
   overflow: scroll;

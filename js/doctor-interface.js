@@ -11,7 +11,7 @@ var displayProfile = function(profile, specialties){
       specialtiesStr = specialtiesStr + specialty.name + ", ";
     });
     $("#specialties").text(specialtiesStr.substring(0, specialtiesStr.length-2));
-    $(".hidden").removeClass("hidden");
+    $("#profile").removeClass("hidden");
 };
 
 var displayDoctors = function(results){
@@ -24,10 +24,11 @@ var displayDoctors = function(results){
   });
 };
 
-
 $(document).ready(function(){
  $("form").submit(function(event){
    event.preventDefault();
+   $("#searched").removeClass("hidden");
+   $("#hero-image").addClass("hidden");
    $("#profile").addClass("hidden");
    var distance = $("#distance option:selected").val();
    var medicalIssue = $("#medical-issues").val();
